@@ -20,4 +20,8 @@ describe("StringCalculator.add", () => {
   test("returns sum of numbers separated by commas and newlines", () => {
     expect(add("1\n2,3")).toBe(6);
   });
+
+  test("supports custom single-character delimiter", () => {
+    expect(add("//;\n1;2")).toBe(3);
+  });
 });
