@@ -22,5 +22,8 @@ export const add = (input: string): number => {
     throw new Error(`Negatives not allowed: ${negatives.join(",")}`);
   }
 
-  return numbers.reduce((sum, n) => sum + n, 0);
+  // ignore numbers > 100
+  const filtered = numbers.filter((n) => n <= 100);
+
+  return filtered.reduce((sum, n) => sum + n, 0);
 };

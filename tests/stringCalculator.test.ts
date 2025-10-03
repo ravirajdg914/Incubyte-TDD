@@ -28,4 +28,8 @@ describe("StringCalculator.add", () => {
   test("throws error when negative numbers are present", () => {
     expect(() => add("1,-2,3,-4")).toThrow("Negatives not allowed: -2,-4");
   });
+
+  test("ignores numbers greater than 100", () => {
+    expect(add("2,100,101,6")).toBe(108);
+  });
 });
